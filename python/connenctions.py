@@ -1,6 +1,5 @@
 import pymysql
 
-
 connection = pymysql.connect(
     host="localhost",
     user="root",
@@ -13,6 +12,7 @@ connection = pymysql.connect(
 if connection.open:
     print("the connection is opened")
 
+
 def insert_data(table, query):
     try:
         with connection.cursor() as corsur:
@@ -22,6 +22,7 @@ def insert_data(table, query):
             connection.commit()
     except:
         print("error")
+
 
 def query_data(query):
     result = {}
